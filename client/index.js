@@ -20,8 +20,11 @@ document.getElementById("transfer-amount").addEventListener('click', () => {
   const amount = document.getElementById("send-amount").value;
   const recipient = document.getElementById("recipient").value;
 
+  const signatureR = document.getElementById("signature-r").value;
+  const signatureS = document.getElementById("signature-s").value;
+
   const body = JSON.stringify({
-    sender, amount, recipient
+    sender, amount, recipient, signatureR, signatureS
   });
 
   const request = new Request(`${server}/send`, { method: 'POST', body });
